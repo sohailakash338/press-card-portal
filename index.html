@@ -1,78 +1,303 @@
-<div class="section">
+```html
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ٹائٹل - اردو بڑا، انگلش چھوٹا -->
-<h2 style="text-align:center; line-height:1.4; margin-bottom:25px;">
-<span style="font-size:28px; color:#b30000; font-weight:700; display:block;">نیا ایکسپریس میڈیا گروپ</span>
-<span style="font-size:18px; color:#555; font-weight:500; display:block; margin-top:5px;">VERIFICATION PORTAL</span>
-</h2>
+<title>Daily Multan Express - Press Card Verification Portal</title>
 
-<!-- کارڈ تصویر باکس -->
-<div style="max-width:400px; margin:0 auto 30px auto; padding:12px; background:#fff5f5; border:3px solid #b30000; border-radius:12px; box-shadow:0 4px 15px rgba(179,0,0,0.2);">
-<img src="photo.png" alt="Press Card" style="width:100%; height:auto; border-radius:8px; display:block;">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+background:#f1f5f9;
+font-family:'Noto Nastaliq Urdu',sans-serif;
+}
+
+.top-header{
+background:linear-gradient(135deg,#001f54,#003d91);
+padding:25px;
+color:white;
+text-align:center;
+box-shadow:0 3px 15px rgba(0,0,0,.2);
+}
+
+.verify-card{
+background:white;
+border-radius:20px;
+padding:30px;
+box-shadow:0 5px 25px rgba(0,0,0,.12);
+margin-top:30px;
+}
+
+.status-active{
+background:#198754;
+color:white;
+padding:12px;
+font-size:20px;
+font-weight:bold;
+border-radius:10px;
+text-align:center;
+}
+
+.info-box{
+background:white;
+border-radius:20px;
+padding:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.10);
+}
+
+.card-img{
+width:100%;
+border-radius:15px;
+border:2px solid #ddd;
+}
+
+.footer{
+background:#001f54;
+color:white;
+padding:15px;
+margin-top:40px;
+text-align:center;
+}
+
+table td{
+padding:12px !important;
+font-size:18px;
+}
+
+.logo{
+font-size:42px;
+font-weight:bold;
+letter-spacing:1px;
+}
+
+.tagline{
+font-size:22px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="top-header">
+
+<div class="logo">
+DAILY MULTAN EXPRESS
 </div>
 
-<!-- کارڈ کی مکمل ڈیٹیل -->
-<div style="max-width:600px; margin:0 auto; background:#f8f9fa; padding:25px; border-radius:10px; border-right:4px solid #b30000; box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+<div class="tagline">
+سچ کی رفتار
+</div>
 
-<h3 style="text-align:center; color:#b30000; font-size:22px; margin-bottom:20px; font-weight:700;">CARD DETAILS</h3>
+<h3>
+PRESS CARD VERIFICATION PORTAL
+</h3>
 
-<p style="margin-bottom:12px; font-size:18px; padding:8px 0; border-bottom:1px dashed #e0e0e0;"><strong>PRESS CARD NUMBER:</strong> RML-300-01-26</p>
+</div>
 
-<p style="margin-bottom:12px; font-size:18px; padding:8px 0; border-bottom:1px dashed #e0e0e0;"><strong>NAME:</strong> Rana Sohail</p>
+<div class="container">
 
-<p style="margin-bottom:12px; font-size:18px; padding:8px 0; border-bottom:1px dashed #e0e0e0;"><strong>CNIC:</strong> 36303-8019066-5</p>
+<div class="verify-card">
 
-<p style="margin-bottom:12px; font-size:18px; padding:8px 0; border-bottom:1px dashed #e0e0e0;"><strong>DESIGNATION:</strong> Press Reporter</p>
+<h3 class="text-center mb-4">
+پریس کارڈ کی تصدیق کریں
+</h3>
 
-<p style="margin-bottom:12px; font-size:18px; padding:8px 0; border-bottom:1px dashed #e0e0e0;"><strong>NEWSPAPER:</strong> روزنامہ معاشرہ لاہور</p>
+<div class="row justify-content-center">
 
-<p style="margin-bottom:12px; font-size:18px; padding:8px 0; border-bottom:1px dashed #e0e0e0;"><strong>CITY:</strong> Multan</p>
+<div class="col-md-6">
 
-<p style="margin-bottom:12px; font-size:18px; padding:8px 0; border-bottom:1px dashed #e0e0e0;"><strong>PHONE:</strong> 03066632477</p>
+<input type="text"
+id="cnic"
+class="form-control form-control-lg"
+placeholder="CNIC درج کریں">
 
-<p style="margin-bottom:20px; font-size:18px; padding:8px 0;"><strong>ISSUE DATE:</strong> 06/06/26</p>
+</div>
 
-<!-- Verified Status -->
-<div style="background:linear-gradient(135deg, #28a745 0%, #1e7e34 100%); color:#fff; text-align:center; padding:15px; border-radius:8px; font-size:22px; font-weight:700; margin-top:20px; box-shadow:0 3px 10px rgba(40,167,69,0.3);">
-✓ CARD IS VERIFIED
+<div class="col-md-2 d-grid">
+
+<button class="btn btn-primary btn-lg"
+onclick="verifyCard()">
+Verify
+</button>
+
 </div>
 
 </div>
 
-<br>
+</div>
 
-<!-- فیچرز لسٹ -->
-<ul class="feature-list">
+<div id="record" style="display:none;">
 
-<li>✓ Press Card Verification</li>
+<div class="status-active mt-4">
+✓ CARD VERIFIED & ACTIVE
+</div>
 
-<li>✓ Reporter Profile Verification</li>
+<div class="row mt-4">
 
-<li>✓ Bureau Information</li>
+<div class="col-md-6 mb-3">
 
-<li>✓ District & Tehsil Details</li>
+<div class="info-box">
 
-<li>✓ Active / Expired Status</li>
+<h4 class="text-center mb-3">
+پریس کارڈ
+</h4>
 
-<li>✓ Official QR Verification</li>
+<img src="press-card.jpg" class="card-img">
 
-<li>✓ Instant Online Verification</li>
-
-<li>✓ Secure Digital Database</li>
-
-</ul>
-
-<!-- ویریفکیشن پورٹل کی طرف سے ہدایات -->
-<div style="max-width:600px; margin:30px auto 0 auto; background:#fff5f5; padding:20px; border-radius:10px; border-left:4px solid #b30000;">
-<h4 style="color:#b30000; font-size:18px; margin-bottom:12px; font-weight:700;">VERIFICATION PORTAL - تصدیقی ہدایات:</h4>
-<ol style="margin:0; padding-right:20px; line-height:1.8; font-size:16px;">
-<li>اس کارڈ کا اسٹیٹس "VERIFIED" ہے۔ ڈیٹا بیس میں تصدیق شدہ ہے</li>
-<li>کارڈ نمبر RML-300-01-26 نیا ایکسپریس میڈیا گروپ کے سرکاری ریکارڈ میں موجود ہے</li>
-<li>نام اور CNIC کی تصدیق مکمل ہو چکی ہے - اسٹیٹس Active ہے</li>
-<li>کارڈ کی معیاد اور تفصیلات صرف اس پورٹل سے چیک کی جا سکتی ہیں</li>
-<li>کوئی بھی مشکوک کارڈ اس پورٹل پر "NOT VERIFIED" شو ہو گا</li>
-</ol>
-<p style="margin-top:12px; font-size:14px; color:#666; font-style:italic;">نوٹ: یہ تصدیق صرف نیا ایکسپریس میڈیا گروپ ویریفکیشن پورٹل کی طرف سے جاری کی گئی ہے۔</p>
 </div>
 
 </div>
+
+<div class="col-md-6 mb-3">
+
+<div class="info-box">
+
+<h4 class="text-center mb-3">
+اعلان تقرری
+</h4>
+
+<img src="appointment.jpg" class="card-img">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="info-box mt-3">
+
+<h3 class="text-center mb-4">
+تفصیلات
+</h3>
+
+<table class="table table-bordered">
+
+<tr>
+<td><b>نام</b></td>
+<td>Nabeel Khan</td>
+</tr>
+
+<tr>
+<td><b>CNIC</b></td>
+<td>42401-9525848-7</td>
+</tr>
+
+<tr>
+<td><b>عہدہ</b></td>
+<td>Bureau Chief</td>
+</tr>
+
+<tr>
+<td><b>شہر</b></td>
+<td>Karachi</td>
+</tr>
+
+<tr>
+<td><b>RME</b></td>
+<td>100-01-2026</td>
+</tr>
+
+<tr>
+<td><b>Validity</b></td>
+<td>May 2027</td>
+</tr>
+
+<tr>
+<td><b>Status</b></td>
+<td class="text-success fw-bold">
+ACTIVE
+</td>
+</tr>
+
+</table>
+
+<div class="text-center mt-4">
+
+<button onclick="window.print()"
+class="btn btn-success btn-lg">
+Print Card
+</button>
+
+<button onclick="downloadPDF()"
+class="btn btn-danger btn-lg">
+Download PDF
+</button>
+
+</div>
+
+</div>
+
+<div class="info-box mt-4">
+
+<h3 class="text-danger">
+اہم نوٹ
+</h3>
+
+<p style="font-size:20px;line-height:2">
+
+یہ پریس کارڈ روزنامہ ملتان ایکسپریس کی جانب سے جاری کردہ
+تصدیق شدہ پریس کارڈ ہے۔
+
+تمام سرکاری، نیم سرکاری اور نجی ادارے
+کارڈ ہولڈر کے ساتھ مکمل تعاون کریں۔
+
+صرف وہی کارڈ درست تصور ہوگا
+جس کا اسٹیٹس ACTIVE ظاہر ہو۔
+
+غیر فعال (NON ACTIVE)
+یا غیر تصدیق شدہ کارڈ
+ادارے کی نمائندگی نہیں کرتے۔
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+© 2026 Daily Multan Express Media Group
+</div>
+
+<script>
+
+function verifyCard(){
+
+let cnic=document.getElementById("cnic").value;
+
+if(cnic==="42401-9525848-7"){
+
+document.getElementById("record").style.display="block";
+
+window.scrollTo({
+top:500,
+behavior:'smooth'
+});
+
+}
+else{
+
+alert("ریکارڈ موجود نہیں ہے");
+
+}
+
+}
+
+function downloadPDF(){
+
+window.print();
+
+}
+
+</script>
+
+</body>
+</html>
+```
